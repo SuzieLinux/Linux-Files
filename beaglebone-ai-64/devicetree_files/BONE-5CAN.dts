@@ -1,0 +1,82 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/pinctrl/k3.h>
+
+&{/chosen} {
+	overlays {
+		BONE-5CAN =  __TIMESTAMP__;
+	};
+};
+
+
+&main_pmx0 {
+        main_mcan4_pins_default: main_mcan4-default-pins {
+                pinctrl-single,pins = <
+                        J721E_IOPAD(0x24, PIN_INPUT, 6) /* (AJ20) PRG1_PRU0_GPO8.MCAN4_RX */
+                        J721E_IOPAD(0x20, PIN_OUTPUT, 6) /* (AE20) PRG1_PRU0_GPO7.MCAN4_TX */
+                >;
+        };
+
+        main_mcan5_pins_default: main_mcan5-default-pins {
+                pinctrl-single,pins = <
+                        J721E_IOPAD(0x3c, PIN_INPUT, 6) /* (AD24) PRG1_PRU0_GPO14.MCAN5_RX */
+                        J721E_IOPAD(0x38, PIN_OUTPUT, 6) /* (AG24) PRG1_PRU0_GPO13.MCAN5_TX */
+                >;
+        };
+
+        main_mcan6_pins_default: main_mcan6-default-pins {
+                pinctrl-single,pins = <
+                        J721E_IOPAD(0x44, PIN_INPUT, 6) /* (AE24) PRG1_PRU0_GPO16.MCAN6_RX */
+                        J721E_IOPAD(0x54, PIN_OUTPUT, 6) /* (AH21) PRG1_PRU0_GPO19.MCAN6_TX */
+                >;
+        };
+
+        main_mcan7_pins_default: main_mcan7-default-pins {
+                pinctrl-single,pins = <
+                        J721E_IOPAD(0x8c, PIN_INPUT, 6) /* (AG25) PRG1_PRU1_GPO13.MCAN7_RX */
+                        J721E_IOPAD(0x88, PIN_OUTPUT, 6) /* (AH25) PRG1_PRU1_GPO12.MCAN7_TX */
+                >;
+        };
+
+        main_mcan8_pins_default: main_mcan8-default-pins {
+                pinctrl-single,pins = <
+                        J721E_IOPAD(0x80, PIN_INPUT, 6) /* (AB23) PRG1_PRU1_GPO10.MCAN8_RX */
+                        J721E_IOPAD(0x7c, PIN_OUTPUT, 6) /* (AF21) PRG1_PRU1_GPO9.MCAN8_TX */
+                >;
+        };
+};
+
+&main_mcan4 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&main_mcan4_pins_default >;
+};
+
+&main_mcan5 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&main_mcan5_pins_default >;
+};
+
+&main_mcan6 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&main_mcan6_pins_default >;
+};
+
+&main_mcan7 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&main_mcan7_pins_default >;
+};
+
+&main_mcan8 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&main_mcan8_pins_default >;
+};
